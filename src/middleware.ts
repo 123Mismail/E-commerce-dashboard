@@ -2,12 +2,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(req: NextRequest) {
-  const sessionId = req.cookies.get("session_id");
-  console.log(sessionId ,"trying to access session id in middleware") 
+export async  function middleware(req: NextRequest) {
+  const session_id= await req.cookies.get("session_id");
+  // console.log(session_id ,"session id is trying to fetch here ")
+  // const sessionId = req.cookies.get("session_id");
+  console.log(session_id ,"trying to access session id in middleware") 
 
   // Check if the user has the session cookie 
-  if (!sessionId?.value) {
+  if (!session_id?.value) {
     // Redirect to login page if not authenticated
     return NextResponse.redirect(new URL("/login", req.url));
   }
