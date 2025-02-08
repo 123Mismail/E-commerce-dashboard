@@ -95,8 +95,10 @@ export function AppSidebar() {
     <Sidebar className="px-5 py-4 mt-5">
       <SidebarContent>
         <SidebarGroup>
+
+        <button onClick={()=>handleLogout()} className="px-2 py-1 rounded-md my-3 bg-blue-600 text-white">Log Out</button>
           <SidebarGroupLabel className="text-xl font-medium">Dashboard</SidebarGroupLabel> 
-          <button onClick={()=>handleLogout()} className="px-2 py-1 rounded-md my-3 bg-blue-600 text-white">Log Out</button>
+          
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
