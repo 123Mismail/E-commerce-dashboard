@@ -6,6 +6,7 @@ export async function POST(req: Request) {
     const myCookies = cookies();
 
     // Log the session cookie from the incoming request
+    // @ts-ignore
     const sessionCookie = myCookies.get("session_id");
     console.log("Session cookie before clearing:", sessionCookie);
 

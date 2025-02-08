@@ -4,6 +4,7 @@ import type { NextRequest } from "next/server";
 
 export async function middleware(req: NextRequest) {
   const myCookies = cookies();
+  // @ts-ignore
   const sessionCookie = myCookies.get("session_id");
 
   console.log("Session ID in middleware:", sessionCookie?.value);
