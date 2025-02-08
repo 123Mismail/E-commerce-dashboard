@@ -39,16 +39,16 @@ const page = () => {
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recent Activity</h2>
         <div className="space-y-4">
           <div className="flex items-center justify-between border-b pb-4">
-            <p className="text-gray-700">New user registered</p>
-            <span className="text-sm text-gray-500">2 hours ago</span>
+            <p className="text-gray-700">New orders registered</p>
+            <span className="text-sm text-gray-500">22</span>
           </div>
           <div className="flex items-center justify-between border-b pb-4">
-            <p className="text-gray-700">Project "Dashboard UI" updated</p>
-            <span className="text-sm text-gray-500">5 hours ago</span>
+            <p className="text-gray-700">Products added</p>
+            <span className="text-sm text-gray-500">5</span>
           </div>
           <div className="flex items-center justify-between border-b pb-4">
-            <p className="text-gray-700">Task "Fix bugs" completed</p>
-            <span className="text-sm text-gray-500">1 day ago</span>
+            <p className="text-gray-700">Products Deleted</p>
+            <span className="text-sm text-gray-500">1</span>
           </div>
         </div>
       </div>
