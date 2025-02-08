@@ -26,7 +26,7 @@ const items = [
     icon: Home,
   },
   {
-    title: "Orers",
+    title: "Orders",
     url: "/orders",
     icon: ListOrdered,
   },
