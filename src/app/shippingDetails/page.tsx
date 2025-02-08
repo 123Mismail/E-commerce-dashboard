@@ -84,9 +84,10 @@ export default function ShippingPage() {
                 </TableCell>
                 <TableCell className="border-r-2">
                   <select>
-                    <option value="pending1">Pending 1</option>
-                    <option value="pending2">Pending 2</option>
-                    <option value="pending3">Pending 3</option>
+                    <option value="pending1">Pending </option>
+                    <option value="pending2">Shipped </option>
+                    <option value="pending3">Cancelled</option>
+                    <option value="pending3">Delivered</option>
                   </select>
                 </TableCell>
                 <TableCell className="border-r-2">

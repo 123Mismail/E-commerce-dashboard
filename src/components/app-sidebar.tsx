@@ -15,9 +15,7 @@ import {
 import { useEffect, useState } from "react"
 
 // Menu items.
-
-const SIDEBAR_WIDTH = "16rem"
-const SIDEBAR_WIDTH_MOBILE = "18rem"
+ 
 
 const items = [
   {
