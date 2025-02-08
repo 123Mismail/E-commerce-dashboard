@@ -1,25 +1,28 @@
-import { NextRequest, NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
 
-// Handle the POST request for logout
-export async function POST(req: NextRequest) { 
-
-    
+export async function POST(req: Request) {
   try {
-    // Create a response object to manipulate cookies 
-    const getCookies = req.cookies.get("session_id")
+    const myCookies = cookies();
+
+    // Log the session cookie from the incoming request
+    const sessionCookie = myCookies.get("session_id");
+    console.log("Session cookie before clearing:", sessionCookie);
+
+    // Prepare the response
     const response = NextResponse.json({ message: "Logged out successfully" });
-    console.log(getCookies,"trying to get cookidein logout paeg")
-    // Clear the "session_id" cookie
-    response.cookies.set("session_id", "", { 
-      path: "/", 
-      httpOnly: true, // Prevent client-side access
-      secure: process.env.NODE_ENV === "production", // HTTPS only in production
-      expires: new Date(0), // Expire the cookie immediately
+
+    // Clear the session_id cookie
+    response.cookies.set("session_id", "", {
+      path: "/", // Same as the login cookie path
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      expires: new Date(0), // Expire immediately
     });
 
+    console.log("Cookie has been cleared in the response.");
     return response;
   } catch (error) {
-    // Log the error and return a server error response
     console.error("Logout error:", error);
     return NextResponse.json(
       { message: "An error occurred during logout", status: 500 },

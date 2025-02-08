@@ -70,26 +70,33 @@ export function AppSidebar() {
    
  
  
-  const handelLogout = async ()=>{
-   try {
-     const response = await fetch('api/logout') 
-     if(response){
-      router.push("/login");
-      alert("successfully logout" )
-     }
-   } catch (error) {
-    console.log(error)
-    alert("failed to logout")
-   }
-    
-  }
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/logout", {
+        method: "POST",
+        credentials: "include", // Include cookies in the request
+      });
+  
+      if (response.ok) {
+        alert("Successfully logged out");
+        router.push("/login"); // Redirect to login page
+      } else {
+        const errorData = await response.json();
+        alert(errorData.message || "Failed to log out. Please try again.");
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+      alert("An unexpected error occurred. Please try again.");
+    }
+  };
+  
 
   return (
     <Sidebar className="px-5 py-4 mt-5">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-xl font-medium">Dashboard</SidebarGroupLabel> 
-          <button onClick={()=>handelLogout()} className="px-2 py-1 rounded-md my-3 bg-blue-600 text-white">Log Out</button>
+          <button onClick={()=>handleLogout()} className="px-2 py-1 rounded-md my-3 bg-blue-600 text-white">Log Out</button>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
