@@ -81,11 +81,11 @@ export default function OrderPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
+            
+          {orders && orders.map((order:Order )=> (
 
-          {orders && orders.map((order:Order ,Ind)=> (
 
-
-          <TableRow key={Ind} className="max-h-screen">
+          <TableRow key={order.orderDate} className="max-h-screen">
             <TableCell className="border-r-2" >{order.title}</TableCell>
             <TableCell className="border-r-2" >{order.products.productName}</TableCell>
             <TableCell className="border-r-2" >{order.customer.email}</TableCell>
