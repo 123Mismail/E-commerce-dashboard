@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { useEffect, useState } from "react"
-
+import {useRouter} from "next/navigation"
 // Menu items.
  
 
@@ -53,7 +53,7 @@ const items = [
 
 export function AppSidebar() {
   const [cookieValue, setCookieValue] = useState<string | null>(null);
-
+  const router =  useRouter();
   useEffect(() => {
     function getCookie(name: string) {
       const cookieString = document.cookie;
@@ -68,12 +68,13 @@ export function AppSidebar() {
   }, []);
    
    
- console.log(cookieValue ,"khkhkhkj")
+ 
  
   const handelLogout = async ()=>{
    try {
      const response = await fetch('api/logout') 
      if(response){
+      router.push("/login");
       alert("successfully logout" )
      }
    } catch (error) {

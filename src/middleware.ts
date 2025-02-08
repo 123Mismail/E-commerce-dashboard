@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   const sessionId = req.cookies.get("session_id");
-  console.log(sessionId ,"trying to access session id") 
+  console.log(sessionId ,"trying to access session id in middleware") 
 
   // Check if the user has the session cookie 
   if (!sessionId?.value) {
