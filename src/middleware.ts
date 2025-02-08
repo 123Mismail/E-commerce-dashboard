@@ -1,4 +1,6 @@
-// middleware.ts
+ console.log("middle ware file is runnig ")
+
+
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -20,5 +22,5 @@ export async  function middleware(req: NextRequest) {
 
 // Apply the middleware to specific routes (like /admin)
 export const config = {
-  matcher: ["/analytics" , "/customers", "/orders","/products" , "/shippingDetails "], // Protect all routes under /admin
+  matcher: ["/analytics" , "/customers", "/orders","/products" ,"/shippingDetails" ,"/"], // Protect all routes under /admin
 };
