@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {  Delete} from "lucide-react"
-import { client } from "../lib/sanity";
+import { client } from "../../lib/sanity";
 import { useEffect, useState } from "react";
 import {format ,parseISO} from "date-fns"
 

@@ -7,7 +7,7 @@ export async function middleware(req: NextRequest) {
   // @ts-ignore
   const sessionCookie = myCookies.get("session_id");
 
-  console.log("Session ID in middleware:", sessionCookie?.value);
+  
 
   // If session_id is missing, redirect to login
   if (!sessionCookie?.value) {

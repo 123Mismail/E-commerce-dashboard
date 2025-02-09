@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useEffect, useState } from "react";
-import { client } from "../lib/sanity";
+import { client } from "../../lib/sanity";
 import {format ,parseISO} from "date-fns"
 
 

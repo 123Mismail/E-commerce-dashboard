@@ -12,7 +12,7 @@ import {
   } from "@/components/ui/table"
   import {  EditIcon} from "lucide-react"
 import { useEffect, useState } from "react";
-import { client } from "../lib/sanity";
+import { client } from "../../lib/sanity";
  
 
 interface Iproduct {

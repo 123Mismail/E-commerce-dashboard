@@ -1,6 +1,6 @@
  
 
-import { client } from "@/app/lib/sanity";
+import { client } from "@/lib/sanity";
 import { NextRequest, NextResponse } from "next/server";
 
 
